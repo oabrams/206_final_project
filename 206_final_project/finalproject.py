@@ -522,6 +522,5 @@ def interactive_prompt():
     print('Bye!')
 if __name__=="__main__":
 # init_db()
-# get_data_from_yelp('Breakfast', '91436')
+
     interactive_prompt()
-# restaurantjsoninfo()
