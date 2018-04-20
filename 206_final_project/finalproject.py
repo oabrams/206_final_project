@@ -294,10 +294,12 @@ def make_yelp_request_using_db(url, params, term, location, verify):
                 for x in nextinfo:
                     list1.append(x)
                 print(list1[int(finalinput)-1][0],'\n', 'Rating:', list1[int(finalinput)-1][1], '\n', list1[int(finalinput)-1][2], list1[int(finalinput)-1][3], list1[int(finalinput)-1][4])
-                tweetinput=input('Enter "tweets" for a list of tweets about the selected restaurant or "exit" to leave the programs: ')
+                tweetinput=input('Enter "tweets" for a list of tweets about the selected restaurant: ')
 #print tweets
                 if tweetinput=='tweets':
                     tweets=get_tweets_for_restaurant_from_db(list1[int(finalinput)-1][0])
+                else:
+                    print('Invalid input')
                 return(list1)
 #print info based on selected restaurant
         elif number_next_input.isdigit() and int(number_next_input)<= 10:
@@ -309,10 +311,12 @@ def make_yelp_request_using_db(url, params, term, location, verify):
             for x in moreinfo:
                 listagain.append(x)
             print(listagain[int(number_next_input)-1][0], '\n', 'Rating:', listagain[int(number_next_input)-1][1], '\n', listagain[int(number_next_input)-1][2], listagain[int(number_next_input)-1][3], listagain[int(number_next_input)-1][4], listagain[int(number_next_input)-1][5])
-            tweetinput=input('Enter "tweets" for a list of tweets about the selected restaurant or "exit" to leave the programs: ')
+            tweetinput=input('Enter "tweets" for a list of tweets about the selected restaurant: ')
 #print tweets
             if tweetinput=='tweets':
                 get_tweets_for_restaurant_from_db(listagain[int(number_next_input)-1][0])
+            else:
+                print('Invalid input')
             return(listagain)
 
 #selecting/sorting restuarants based on ratings
@@ -414,10 +418,12 @@ def make_yelp_request_using_db(url, params, term, location, verify):
                 for x in nextinfo:
                     list1.append(x)
                 print(list1[int(finalinput)-1][0], '\n', 'Rating:', list1[int(finalinput)-1][1], '\n', list1[int(finalinput)-1][2], list1[int(finalinput)-1][3], list1[int(finalinput)-1][4])
-                tweetinput=input('Enter "tweets" for a list of tweets about the selected restaurant or "exit" to leave the programs: ')
+                tweetinput=input('Enter "tweets" for a list of tweets about the selected restaurant: ')
 #print tweets
                 if tweetinput=='tweets':
                     get_tweets_for_restaurant_from_db(list1[int(finalinput)-1][0])
+                else:
+                    print('Invalid input')
                 return(list1)
         elif number_next_input.isdigit() and int(number_next_input)<= 10:
             statement='SELECT RestaurantName, rating, Address, City, State, zipcode '
@@ -428,9 +434,11 @@ def make_yelp_request_using_db(url, params, term, location, verify):
             for x in moreinfo:
                 listagain.append(x)
             print(listagain[int(number_next_input)-1][0], '\n', 'Rating:', listagain[int(number_next_input)-1][1], '\n', listagain[int(number_next_input)-1][2], listagain[int(number_next_input)-1][3], listagain[int(number_next_input)-1][4], listagain[int(number_next_input)-1][5])
-            tweetinput=input('Enter "tweets" for a list of tweets about the selected restaurant or "exit" to leave the programs: ')
+            tweetinput=input('Enter "tweets" for a list of tweets about the selected restaurant: ')
             if tweetinput=='tweets':
                 get_tweets_for_restaurant_from_db(listagain[int(number_next_input)-1][0])
+            else:
+                print('Invalid input')
             return(listagain)
 
     elif newinput=='exit':
